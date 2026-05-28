@@ -1,0 +1,22 @@
+# .github/workflows/release-please.yml
+name: release-please
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: googleapis/release-please-action@v4
+        with:
+          release-type: terraform-module
+          package-name: modulos-auy1105-grupo-4
+          initial-version: "0.1.0"
